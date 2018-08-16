@@ -14,8 +14,8 @@
     - Arithmetic on Image Embeddings
 - *By designing Algorithms for Navigation in a Meaningful latent space, we can imitate a generative process which might resemble abstract reasoning.*
 - **Examples**: 
-    - Writing code on top of pre-defined functionality by expanding parse trees directly in the latent space (**Graph embeddings**);
     - Extracting hierarchies and relationships between objects from an image through traversal of sub-images directly in the latent space (**Image embeddings**);
+    - Writing code on top of pre-defined functionality by expanding parse trees directly in the latent space (**Graph embeddings**);
 - *The analogy to the human mind is that latent representations are thoughts derived from perceptual information.*
 - *The navigation in the latent space then corresponds to thinking about thoughts, a mechanism which allows us to generate relevant actions which derive from an abstract representation of a situation, rather than exact copies of actions performed in the past in a similar situation.*
 
