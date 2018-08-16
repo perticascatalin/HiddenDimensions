@@ -27,6 +27,19 @@
 
 ## Properties
 
+**Word2Vec**
+
+![Word Directions](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/word_directions.png "Word Directions")
+
+Mikolov et al. (2013)
+
+**DCGAN**
+
+![Image Arithmetic](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/image_arithmetic.png "Image Arithmetic")
+
+Radford et al. (2015)
+
+
 ### Samples Density and Principal Component Analysis
 
 ### Non-Linear Projections, Sub-Spaces and Clustering
