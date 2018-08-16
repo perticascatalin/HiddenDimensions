@@ -21,9 +21,16 @@
 
 **Applications linked to our past research**:
 - *Clustering Computer Programs based on Spatio-Temporal Features*
+- *Aster Project*
 - *Learning Semantic Web Categories by Clustering and Embedding Web Elements*
 
 ## Representations
+
+The latent representation in a typical autoencoder is a kind of black box or bottleneck inside a system that optimizes the information compression of the input data constrained by minimizing the data reconstruction error.
+
+![Autoencoder](https://upload.wikimedia.org/wikipedia/commons/2/28/Autoencoder_structure.png "Autoencoder")
+
+Wikipedia, Autoencoder
 
 ## Properties
 
