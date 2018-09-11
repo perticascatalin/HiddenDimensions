@@ -35,10 +35,16 @@
 
 ### Basics of Variational Auto-encoder
 
+**Idea**: Model latent variable as a variable drawn from a latent probability distribution.
+
+| Representation | Description |
+|:---:|:---:|
+| ![VAE Encoder Decoder](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/encoder_decoder.png "VAE Encoder Decoder")  from *https://jaan.io/what-is-variational-autoencoder-vae-tutorial/*| **Encoder**: q models probability of hidden variable given data, **Decoder**: p models data probability given hidden variable |
 
 | ![VAE Derivation](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/vae_1.jpg "VAE Derivation") | ![VAE Properties](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/vae_2.jpg "VAE Properties") |
 |:---:|:---:|
 | **VAE Derivation**:  | **VAE Properties**: |
+| Loss function consists of 2 terms - **Reconstruction Error**: how well samples are reconstructed from hidden variable, **KL Divergence**: penalizes data points from occupying distant regions in the latent space.| Encoding sample is deterministic. Then z is drawn from probability distribution q(z \| x). Reconstructed \~x is also drawn from probability distribution p(x \| z).|
 
 
 ## Properties
