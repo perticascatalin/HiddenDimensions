@@ -20,17 +20,18 @@
 - *The navigation in the latent space then corresponds to thinking about thoughts, a mechanism which allows us to generate relevant actions which derive from an abstract representation of a situation, rather than exact copies of actions performed in the past in a similar situation.*
 
 **Applications linked to our past research**:
+
 - *Clustering Computer Programs based on Spatio-Temporal Features*
-- *Aster Project*
+- *Aster Project: AST derived Code Representations for General Code Evaluation and Generation*
+- *Clustering and Visualization of Latent Representations*
 - *Learning Semantic Web Categories by Clustering and Embedding Web Elements*
 
 ## Representations
 
-The latent representation in a typical autoencoder is a kind of black box or bottleneck inside a system that optimizes the information compression of the input data constrained by minimizing the data reconstruction error.
 
-![Autoencoder](https://upload.wikimedia.org/wikipedia/commons/2/28/Autoencoder_structure.png "Autoencoder")
-
-Wikipedia, Autoencoder
+| Representation | Description |
+|:--------------:|:-----------:|
+|![Autoencoder](https://upload.wikimedia.org/wikipedia/commons/2/28/Autoencoder_structure.png "Autoencoder") Wikipedia, Autoencoder| The latent representation in a typical autoencoder is a kind of black box or bottleneck inside a system that optimizes the information compression of the input data constrained by minimizing the data reconstruction error.|
 
 ### Basics of Variational Auto-encoder
 
