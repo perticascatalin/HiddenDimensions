@@ -35,7 +35,7 @@
 
 ### Basics of Variational Auto-encoder
 
-**Idea**: Model latent variable as a variable drawn from a latent probability distribution.
+**Idea**: Model latent variable as a variable drawn from a learned probability distribution.
 
 | Representation | Description |
 |:---:|:---:|
@@ -63,3 +63,32 @@
 | ![Latent Arithmetic](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/latent_arithmetic.jpg "Latent Arithmetic") | ![Latent Navigation](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/latent_navigation.jpg "Latent Navigation") |
 |:---:|:---:|
 | **Latent Arithmetic**: Do sub-images form hierarchical clusters or separate clusters in the latent space? Can header and container be added (with a learnt operator, in the latent representation) to output the latent resulting page? Can algorithms for navigation in the tree structure be directly implemented in the latent space? | **Latent Navigation**: Linear interpolation between Z of samples; Clock-wise rotation (interpolation on a curved surface); Valley/ridge navigation on projected surface of latent space - valleys/ridges can be found by clustering: dense regions form valleys, while sparse regions determine ridges (topology map). |
+
+## Tasks
+
+### MNIST
+
+### CLEVR
+
+### Sort of CLEVR
+
+### Multi Label Shape & Color
+
+**Dataset**:
+
+- 28 x 28 x 3 sized images
+- 2 labels: shape and color
+- shapes: square, circle, triangle
+- colors: red, green, blue
+
+| Sample | Description | Sample | Description |
+|:------:|:-----------:|:------:|:-----------:|
+|![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/373_square_red.png "Sample 1")| red square |![Sample 5](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/560_triangle_red.png "Sample 5")| red triangle |
+|![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/402_circle_blue.png "Sample 2")| blue circle |![Sample 6](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/573_circle_red.png "Sample 6")| red circle |
+|![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/418_square_green.png "Sample 3")| green square |![Sample 7](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/569_triangle_blue.png "Sample 7")| blue triangle |
+|![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/500_triangle_green.png "Sample 4")| green triangle |![Sample 8](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/598_square_blue.png "Sample 8")| blue square |
+
+### Relational Shape & Color
+
+### Synthetic Webpages
+
