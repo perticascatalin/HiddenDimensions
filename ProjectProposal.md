@@ -66,13 +66,7 @@
 
 ## Tasks
 
-### MNIST
-
-### CLEVR
-
-### Sort of CLEVR
-
-### Multi Label Shape & Color
+### Multi-Label Figures with Shape & Color
 
 **Dataset**:
 
@@ -81,6 +75,18 @@
 - shapes: square, circle, triangle
 - colors: red, green, blue
 
+**Primary Goal**:
+
+- explore multi-label, multi-class classification problem
+- 3 options: 
+	- multi-label (multiple logit sets)
+	- combination of labels (each logit is a combo)
+	- one neural-network for each label
+
+**Secondary Goal**:
+
+- inspect learned features in intermediate CNN layers
+
 | Sample | Description | Sample | Description |
 |:------:|:-----------:|:------:|:-----------:|
 |![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/373_square_red.png "Sample 1")| red square |![Sample 5](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/560_triangle_red.png "Sample 5")| red triangle |
@@ -88,7 +94,17 @@
 |![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/418_square_green.png "Sample 3")| green square |![Sample 7](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/569_triangle_blue.png "Sample 7")| blue triangle |
 |![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/500_triangle_green.png "Sample 4")| green triangle |![Sample 8](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/598_square_blue.png "Sample 8")| blue square |
 
+**Primary Results**:
+
+![Multi-Label vs. Combo](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/multi_label_vs_combo.png "Multi-Label vs. Combo")
+
 ### Relational Shape & Color
+
+### MNIST
+
+### CLEVR
+
+### Sort of CLEVR
 
 ### Synthetic Webpages
 
