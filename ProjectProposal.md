@@ -131,15 +131,22 @@
 
 **Secondary Question**: Can we generate new questions that are relevant?
 
-The dataset is a great subject for the application of **Relational Networks** [A], which belong to the family of **Graph Nets**. 
+The dataset is a great subject for the application of **Relational Networks** [G1], which belong to the family of **Graph Nets**. 
 
 **Tutorials**:
 
 - [Tutorial 1](https://hackernoon.com/deepmind-relational-networks-demystified-b593e408b643)
 - [Tutorial 2](https://rasmusbergpalm.github.io/recurrent-relational-networks/)
 
-**Relation to Code Generation**:
+#### Relation to Code Generation
+
+**Primary Idea**:
+
+- When writing code, programmers often ask questions about the state of the program and from the answers infer the next steps to take in order to accomplish their goal. 
+- For instance, in the world of objects, we might ask which figures to swap such that a certain order relation is satisfied.
+- A more concrete example would be to group objects in a sequence such that similar colors are consecutive.
+- This would translate into asking a lot of questions similar to the ones showcased by the CLEVR dataset.
 
 ## References
 
-[A] [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), A. Santoro et al, 2017
+[G1] [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), A. Santoro et al, 2017
