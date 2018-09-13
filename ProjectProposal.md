@@ -80,7 +80,7 @@
 - explore multi-label, multi-class classification problem
 - 3 options: 
 	- multi-label (multiple logit sets)
-	- combination of labels (each logit is a combo)
+	- combination of labels (one logit set, each logit is a combo)
 	- one neural-network for each label
 
 **Secondary Goal**:
@@ -94,17 +94,31 @@
 |![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/418_square_green.png "Sample 3")| green square |![Sample 7](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/569_triangle_blue.png "Sample 7")| blue triangle |
 |![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/500_triangle_green.png "Sample 4")| green triangle |![Sample 8](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/598_square_blue.png "Sample 8")| blue square |
 
-**Primary Results**:
+|Primary Results|Primary Conclusions|
+|:------------------:|:----------------------:|
+|![Multi-Label vs. Combo](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/multi_label_vs_combo.png "Multi-Label vs. Combo")|Multi-label performs slightly better than combinations of all labels. The total number of logits add in the case of multi-label, but multiplies in the case of combinations.|
 
-![Multi-Label vs. Combo](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/multi_label_vs_combo.png "Multi-Label vs. Combo")
-
-### Relational Shape & Color
-
-### MNIST
-
-### CLEVR
-
-### Sort of CLEVR
+### Spatial Relationes between Figures and Scene Description
 
 ### Synthetic Webpages
 
+### MNIST
+
+### Sort of CLEVR
+
+### CLEVR
+
+[Dataset Link](https://cs.stanford.edu/people/jcjohns/clevr/)
+
+| Sample | Description |
+|:------:|:-----------:|
+|![CLEVR Sample](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/clevr_sample.png "CLEVR Sample")|3D objects rendered in a scene. Questions test spatial reasoning.|
+|**Questions**|**Answers**|
+|Are there an **equal number** of large things and metal spheres?|Yes|
+|What **size** is the cylinder that **is left** of the brown metal thing that is left of the **big sphere**?|Large|
+
+**Premise**: Question types include attribute identification, counting, comparison, spatial relationships, and logical operations.
+
+**Primary Question**: Can we group similar questions together?
+
+**Secondary Question**: Can we generate new questions that are relevant?
