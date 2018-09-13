@@ -56,7 +56,15 @@
 
 ### Samples Density and Principal Component Analysis
 
+**Observations regarding data complexity**:
+
+- only k principle components obtained from Z (latent space) will be meaningful (in the case of MNIST k between 10 and 20)
+
 ### Non-Linear Projections, Sub-Spaces and Clustering
+
+**Application to semi-supervised/few-shots learning**:
+
+- convex hull defined by few labeled shots on clusters formed from latent representations
 
 ### Navigation in Latent Spaces and Attractors
 
@@ -122,3 +130,16 @@
 **Primary Question**: Can we group similar questions together?
 
 **Secondary Question**: Can we generate new questions that are relevant?
+
+The dataset is a great subject for the application of **Relational Networks** [A], which belong to the family of **Graph Nets**. 
+
+**Tutorials**:
+
+- [Tutorial 1](https://hackernoon.com/deepmind-relational-networks-demystified-b593e408b643)
+- [Tutorial 2](https://rasmusbergpalm.github.io/recurrent-relational-networks/)
+
+**Relation to Code Generation**:
+
+## References
+
+[A] [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), A. Santoro et al, 2017
