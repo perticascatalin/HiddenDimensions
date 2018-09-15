@@ -112,6 +112,12 @@
 
 **Data domain**: synthetic, image and text
 
+**Dataset**:
+
+- 56 x 56 x 3 sized images
+- 2 figures per image, obtained by concatenation of shape-color figures
+- 2 relations: *"above"* and *"next_to"*
+
 | Sample | Description |
 |:------:|:-----------:|
 |![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/45_green_square_above_blue_square.png "Sample 1")| green square above blue square|
