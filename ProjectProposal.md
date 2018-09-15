@@ -184,10 +184,14 @@ Models that work well for this dataset could be extended to do some sort of prog
 - When writing code, programmers often ask questions about the state of the program and from the answers infer the next steps to take in order to accomplish their goal. 
 - For instance, in the world of objects, we might ask which figures to swap such that a certain order relation is satisfied.
 
+*Topics to explore further:* which questions do you ask yourself when writing code/solutions to programming tasks?
+
 *Secondary Idea*: **Tangible programming**
 
 - A more concrete example would be to group objects in a sequence such that similar colors are consecutive.
 - This would translate into asking a lot of questions similar to the ones showcased by the CLEVR dataset
+
+*Topics to explore further:* tangible interfaces, embodied cognition and interaction.
 
 *Third Idea*: **Logical questions modeled through programming**
 
@@ -197,6 +201,13 @@ Models that work well for this dataset could be extended to do some sort of prog
 - Are there any objects colored with red at all?
 
 *Fourth Idea*: **Causal inference from answers to logical questions**
+
+- If object on third position is yellow and object on sixth position is blue, swapping the two will result in which color on 6th position?
+- Does the initial color on 6h position even matter?
+- What if a pattern of movements always results the same output?
+- How can such patterns be found? 
+- Can an agent model optimal behavior and generate such patterns?
+- Does curiosity help?
 
 ## References
 
