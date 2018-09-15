@@ -40,7 +40,7 @@
 | (K-means) | Assigns N observations to K clusters. Number of clusters needs to be known beforehand.
 | | - randomly pick representatives of clusters |
 | | - assign datapoints to nearest representative |
-| | - re-pick representatives based on newly formed cluster |
+| | - re-pick representatives based on newly formed cluster (closest to mean point)|
 | | - re-iterate|
 
 ### Basics of Variational Auto-encoder
@@ -58,6 +58,28 @@
 
 
 ### Basics of Self-organizing Map
+
+| Representation | Description |
+|:-:|:-:|
+| ![Self-organizing map](https://bytebucket.org/perticas/advanceddataanalysis/raw/62e09b8ce26fe28e70d424cf0c2cbc8f0c63efbc/visuals/self_organizing_map_screen.png?token=f9f53f5cf1688884f0be48259662535e0ec523af)| Self-Organizing Maps are artificial neural networks where **neurons** are represented as **cells in a grid**.| 
+| **competitive learning**: neurons compete for activation - selection of **best matching unit** (BMU) | **adaptive learning**: neurons "spread knowledge" to their neighbouring neurons when activated - weights are adapted |
+| Each input that we feed in the network will **activate the neuron** with the **most similar weights** to the input. | Each activation **changes the surrounding neurons** by adjusting their weights to be closer to the activated neuron. The closer the surrounding neuron is to the activated one, the stronger the adjustment is. |
+
+**Variables and Algorithm**
+
+- s = current iteration, L = iteration limit, D = input dataset
+- t = index of vector in dataset, W = weight vectors
+- v = index of node in the map, u = index of best matching unit
+- theta(u,v,s) = neighbourhood function between u & v at iteration s
+- alpha(s) = learning rate at iteration s
+* Randomize W
+* Pick D(t)
+* Traverse each node v in the map
+	* Compute (euclidean) distance between W(v) and D(t)
+	* Record v with **minimum distance** as u
+* Update W in the neighbourhood of the BMU (including itself) by pull them closer to the D(t)
+	* **W(v,s+1) = W(v,s) + theta(u,v,s) * alpha(s) * (D(t) - W(v,s))**
+* Increase s and repeat while s < L
 
 ## Properties
 
