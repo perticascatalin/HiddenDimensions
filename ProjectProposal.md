@@ -166,12 +166,26 @@ The dataset is a great subject for the application of **Relational Networks** [G
 
 #### Relation to Code Generation
 
-**Primary Idea**:
+Models that work well for this dataset could be extended to do some sort of programming through the following links.
+
+*Primary Idea*: **Question asking**
 
 - When writing code, programmers often ask questions about the state of the program and from the answers infer the next steps to take in order to accomplish their goal. 
 - For instance, in the world of objects, we might ask which figures to swap such that a certain order relation is satisfied.
+
+*Secondary Idea*: **Tangible programming**
+
 - A more concrete example would be to group objects in a sequence such that similar colors are consecutive.
-- This would translate into asking a lot of questions similar to the ones showcased by the CLEVR dataset.
+- This would translate into asking a lot of questions similar to the ones showcased by the CLEVR dataset
+
+*Third Idea*: **Logical questions modeled through programming**
+
+- Does the first object have the same color as the second one?
+- More generally, does the object on position i have the same color as the object in position i + 1
+- Where is the first object to have red color?
+- Are there any objects colored with red at all?
+
+*Fourth Idea*: **Causal inference from answers to logical questions**
 
 ## References
 
