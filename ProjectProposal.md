@@ -114,10 +114,10 @@
 
 | Sample | Description |
 |:------:|:-----------:|
-|![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/45\ green\ square\ above\ blue\ square.png "Sample 1")| green square above blue square|
-|![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/85\ green\ triangle\ above\ red\ square.png "Sample 2")| green triangle above red square|
-|![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/87\ blue\ circle\ next_to\ red\ square.png "Sample 3")| blue circle next_to red square|
-|![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/148\ green\ square\ next_to\ blue\ triangle.png "Sample 4")| green square next_to blue triangle|
+|![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/45_green_square_above_blue_square.png "Sample 1")| green square above blue square|
+|![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/85_green_triangle_above_red_square.png "Sample 2")| green triangle above red square|
+|![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/87_blue_circle_next_to_red_square.png "Sample 3")| blue circle next_to red square|
+|![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/148_green_square_next_to_blue_triangle.png "Sample 4")| green square next_to blue triangle|
 
 
 ### Synthetic Webpages
