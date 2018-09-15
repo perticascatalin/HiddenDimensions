@@ -32,6 +32,7 @@
 | Representation | Description |
 |:--------------:|:-----------:|
 |![Autoencoder](https://upload.wikimedia.org/wikipedia/commons/2/28/Autoencoder_structure.png "Autoencoder") Wikipedia, Autoencoder| The latent representation in a typical autoencoder is a kind of black box or bottleneck inside a system that optimizes the information compression of the input data constrained by minimizing the data reconstruction error.|
+| Clustering (K-means) | Explain clustering |
 
 ### Basics of Variational Auto-encoder
 
@@ -47,16 +48,21 @@
 | Loss function consists of 2 terms - **Reconstruction Error**: how well samples are reconstructed from hidden variable, **KL Divergence**: penalizes data points from occupying distant regions in the latent space.| Encoding sample is deterministic. Then z is drawn from probability distribution q(z \| x). Reconstructed \~x is also drawn from probability distribution p(x \| z).|
 
 
+### Basics of Self-organizing Map
+
 ## Properties
 
 | ![Word Directions](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/word_directions.png "Word Directions") | ![Image Arithmetic](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/image_arithmetic.png "Image Arithmetic") |
 |:---:|:---:|
 | **Word2Vec** (Mikolov et al. (2013)) | **DCGAN** (Radford et al. (2015)) |
+| Explain | Explain | 
 
 
 ### Samples Density and Principal Component Analysis
 
 ![Clustering vs. PCA](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/mnist_clust_vs_pca.png "Sample 4")
+
+**Description**
 
 **Observations regarding data complexity**:
 
