@@ -56,6 +56,8 @@
 
 ### Samples Density and Principal Component Analysis
 
+![Clustering vs. PCA](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/mnist_clust_vs_pca.png "Sample 4")
+
 **Observations regarding data complexity**:
 
 - only k principle components obtained from Z (latent space) will be meaningful (in the case of MNIST k between 10 and 20)
@@ -138,6 +140,7 @@
 **Data domain**: natural, image
 
 **Primary Idea**: Clutering of latent representation
+
 
 **Secondary Idea**: Latent interpolation
 
