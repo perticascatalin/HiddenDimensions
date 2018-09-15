@@ -32,7 +32,16 @@
 | Representation | Description |
 |:--------------:|:-----------:|
 |![Autoencoder](https://upload.wikimedia.org/wikipedia/commons/2/28/Autoencoder_structure.png "Autoencoder") Wikipedia, Autoencoder| The latent representation in a typical autoencoder is a kind of black box or bottleneck inside a system that optimizes the information compression of the input data constrained by minimizing the data reconstruction error.|
-| Clustering (K-means) | Explain clustering |
+| Clustering  | Data defined by some measurements. Example: position, color.|
+| ![Clustering](https://bytebucket.org/perticas/advanceddataanalysis/raw/f217d88fcc95affe6b717d91ee39cff823cc0063/visuals/clustering.png?token=d077c7dc513977eb4479a1cf8cf47d4aa7b0177d) | **Discover structure in the data:**|
+| yellow dots | - left upper part| 
+| red dots | - left lower part|
+| blue dots | - right lower part|
+| (K-means) | Assigns N observations to K clusters. Number of clusters needs to be known beforehand.
+| | - randomly pick representatives of clusters |
+| | - assign datapoints to nearest representative |
+| | - re-pick representatives based on newly formed cluster |
+| | - re-iterate|
 
 ### Basics of Variational Auto-encoder
 
