@@ -125,18 +125,29 @@
 |![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/87_blue_circle_next_to_red_square.png "Sample 3")| blue circle next_to red square|
 |![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/148_green_square_next_to_blue_triangle.png "Sample 4")| green square next_to blue triangle|
 
+**Extension**: Latent arithmetic with figures
 
 ### Synthetic Webpages
 
 **Data domain**: synthetic, image, tree and text
 
+**Extension**: Latent arithmetic with figures
+
 ### MNIST
 
 **Data domain**: natural, image
 
+**Primary Idea**: Clutering of latent representation
+
+**Secondary Idea**: Latent interpolation
+
+**Third Idea**: Few-shots learning after unsupervised training
+
 ### Sort of CLEVR
 
 **Data domain**: synthetic, image and text
+
+**Purpose**: Test mock models for CLEVR with less data.
 
 ### CLEVR
 
