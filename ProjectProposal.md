@@ -113,7 +113,14 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 
 ### Non-Linear Projections, Sub-Spaces and Clustering
 
-![Sub-Spaces Clustering](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/subspace_clustering.png "Sub-Spaces Clustering")
+| Projection | Sub-spaces |
+|:--------------:|:-----------:|
+|![Non-Linear Projection](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/non_linear_projection.png "Non-Linear Projection")| ![Sub-Spaces Clustering](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/subspace_clustering.png "Sub-Spaces Clustering")| 
+|VAE creates a very dense space, which is an advantage for continuity (eg. interpolation), but what about border regions? | Sub-spaces of the SOM-clustered latent space can be observed through the U-matrix - brighter border regions between clusters. 
+
+**Application to latent interpolation**:
+
+- continuity means that we can have a smooth transition between how an 8 looks and how a 6 looks
 
 **Application to semi-supervised/few-shots learning**:
 
@@ -138,6 +145,13 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 - shapes: square, circle, triangle
 - colors: red, green, blue
 
+| Sample | Description | Sample | Description |
+|:------:|:-----------:|:------:|:-----------:|
+|![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/373_square_red.png "Sample 1")| red square |![Sample 5](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/560_triangle_red.png "Sample 5")| red triangle |
+|![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/402_circle_blue.png "Sample 2")| blue circle |![Sample 6](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/573_circle_red.png "Sample 6")| red circle |
+|![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/418_square_green.png "Sample 3")| green square |![Sample 7](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/569_triangle_blue.png "Sample 7")| blue triangle |
+|![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/500_triangle_green.png "Sample 4")| green triangle |![Sample 8](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/598_square_blue.png "Sample 8")| blue square |
+
 **Primary Goal**:
 
 - explore multi-label, multi-class classification problem
@@ -149,13 +163,6 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 **Secondary Goal**:
 
 - inspect learned features in intermediate CNN layers
-
-| Sample | Description | Sample | Description |
-|:------:|:-----------:|:------:|:-----------:|
-|![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/373_square_red.png "Sample 1")| red square |![Sample 5](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/560_triangle_red.png "Sample 5")| red triangle |
-|![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/402_circle_blue.png "Sample 2")| blue circle |![Sample 6](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/573_circle_red.png "Sample 6")| red circle |
-|![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/418_square_green.png "Sample 3")| green square |![Sample 7](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/569_triangle_blue.png "Sample 7")| blue triangle |
-|![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/500_triangle_green.png "Sample 4")| green triangle |![Sample 8](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/MLSC/598_square_blue.png "Sample 8")| blue square |
 
 |Primary Results|Primary Conclusions|
 |:------------------:|:----------------------:|
