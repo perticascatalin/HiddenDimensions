@@ -214,7 +214,16 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 
 **Data domain**: synthetic, image, tree and text
 
-**Extension**: Latent arithmetic with figures
+| Webpage | Element masks |
+|:-------:|:-------------:|
+|![Webpage](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/image.png "Webpage")|![Element masks](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/masked_image.png "Element masks")|
+
+**Extension**: Latent arithmetic with web elements
+
+|Header| + | Menu| + | Grid | = | Page |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|![Header](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/header.png "Header") | + | ![Menu](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/menu.png "Menu") | + | ![Grid](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/grid.png "Grid")| = |![Page](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/page.png "Page")|
+
 
 ### MNIST
 
