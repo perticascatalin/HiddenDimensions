@@ -104,7 +104,7 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 - SOM clustering (first row) and PCA (second row) 2D projection of latent MNIST as learnt by a VAE
 - Z_dim = 2, latent representation of samples, no projection
 - latent space becomes denser as Z_dim increases (see PCA)
-- latent space can be re-modeled through topological projection (see SOM)
+- latent space can be re-modeled (density changes) through topological projection (see SOM)
 
 **Observations regarding data complexity**:
 
@@ -112,6 +112,8 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 - clusters are well-formed
 
 ### Non-Linear Projections, Sub-Spaces and Clustering
+
+![Sub-Spaces Clustering](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/subspace_clustering.png "Sub-Spaces Clustering")
 
 **Application to semi-supervised/few-shots learning**:
 
