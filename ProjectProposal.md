@@ -166,6 +166,16 @@
 
 **Extension**: Latent arithmetic with figures
 
+**More complex spatial relations**:
+
+| Sample | Description |
+|:------:|:-----------:|
+|![Sample 1](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_1.png "Sample 1")| 3 circles, 1 square, 5 triangles|
+|![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_2.png "Sample 2")| 3 large red squares, one square on top of the other|
+|![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_3.png "Sample 3")| 2 large red squares, 3 triangles on top|
+|![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_4.png "Sample 4")| 2 circles, 2 squares and 5 triangles|
+
+
 ### Synthetic Webpages
 
 **Data domain**: synthetic, image, tree and text
