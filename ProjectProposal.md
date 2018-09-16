@@ -47,6 +47,10 @@
 
 **Idea**: Model latent variable as a variable drawn from a learned probability distribution.
 
+**Result**: By comparison to the autoencoder the latent space is continuous and interpolation between samples is possible.
+
+**Key-words**: Prior, posterior, probability distribution, log-likelihood, jensen inequality, re-parametrization trick, sampling from a distribution.
+
 | Representation | Description |
 |:---:|:---:|
 | ![VAE Encoder Decoder](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/encoder_decoder.png "VAE Encoder Decoder")  from *https://jaan.io/what-is-variational-autoencoder-vae-tutorial/*| **Encoder**: q models probability of hidden variable given data, **Decoder**: p models data probability given hidden variable |
@@ -83,21 +87,29 @@
 
 ## Properties
 
+By exploring properties/biases of latent spaces, we can address the  **interpretability problem** in DNNs [C1].
+
 | ![Word Directions](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/word_directions.png "Word Directions") | ![Image Arithmetic](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/image_arithmetic.png "Image Arithmetic") |
 |:---:|:---:|
 | **Word2Vec** (Mikolov et al. (2013)) | **DCGAN** (Radford et al. (2015)) |
-| Explain | Explain | 
+| By training a binary classifier which predicts if two words are in context, word embeddings with properties representing gender and tense result. | Adversarial learning on image generation from random vectors results in latent representations obeying simple arithmetic.| 
 
 
 ### Samples Density and Principal Component Analysis
 
 ![Clustering vs. PCA](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/mnist_clust_vs_pca.png "Sample 4")
 
-**Description**
+**Description**:
+
+- SOM clustering (first row) and PCA (second row) 2D projection of latent MNIST as learnt by a VAE
+- Z_dim = 2, latent representation of samples, no projection
+- latent space becomes denser as Z_dim increases (see PCA)
+- latent space can be re-modeled through topological projection (see SOM)
 
 **Observations regarding data complexity**:
 
 - only k principle components obtained from Z (latent space) will be meaningful (in the case of MNIST k between 10 and 20)
+- clusters are well-formed
 
 ### Non-Linear Projections, Sub-Spaces and Clustering
 
@@ -260,5 +272,8 @@ Models that work well for this dataset could be extended to do some sort of prog
 - Does curiosity help?
 
 ## References
+
+[C1] [Cognitive Psychology for Deep Neural Networks:
+A Shape Bias Case Study] (https://arxiv.org/pdf/1706.08606.pdf), S. Ritter et al, 2017
 
 [G1] [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), A. Santoro et al, 2017
