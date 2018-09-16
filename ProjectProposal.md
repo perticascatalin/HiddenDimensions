@@ -109,7 +109,7 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 **Observations regarding data complexity**:
 
 - only k principle components obtained from Z (latent space) will be meaningful (in the case of MNIST k between 10 and 20)
-- clusters are well-formed
+- clusters are well-formed even with limited training (based on homogeneity & silhouette scores and manual evaluation)
 
 ### Non-Linear Projections, Sub-Spaces and Clustering
 
@@ -120,11 +120,15 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 
 **Application to latent interpolation**:
 
-- continuity means that we can have a smooth transition between how an 8 looks and how a 6 looks
+- continuity means that we can have a smooth transition from a representation of the handwritten-digit 8 to a representation of handwritten-digit 6
+- a common way to perform interpolation is the linear one, which assumes the latent representations to be in a euclidean space, where straight lines can be drawn from any point to any other point
+- depending on the meaning of the latent representations, other distance measures and interpolation types might be necessary
+- for the VAE case, the latent space is a manifold on gaussian distributions (see Fisher-Rao and Wasserstein geometries [M1])
 
 **Application to semi-supervised/few-shots learning**:
 
-- convex hull defined by few labeled shots on clusters formed from latent representations
+- enclose landmarks (convex hull) defined by few labeled samples (few-shot learning) on clusters formed from latent representations of unlabeled data
+- also, for data that belongs conceptually to the same class, yet exhibits variability in labels, clusters can help us identify similarities in these labels
 
 ### Navigation in Latent Spaces and Attractors
 
@@ -286,3 +290,7 @@ Models that work well for this dataset could be extended to do some sort of prog
 A Shape Bias Case Study] (https://arxiv.org/pdf/1706.08606.pdf), S. Ritter et al, 2017
 
 [G1] [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), A. Santoro et al, 2017
+
+[M1] [A Comparison between Wasserstein Distance and a
+Distance Induced by Fisher-Rao Metric in Complex
+Shapes Clustering ](http://www.mdpi.com/2504-3900/2/4/163/pdf), A. De Sanctis and S. Gattone,  2017
