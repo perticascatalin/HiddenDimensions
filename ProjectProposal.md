@@ -136,6 +136,15 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 |:---:|:---:|
 | **Latent Arithmetic**: Do sub-images form hierarchical clusters or separate clusters in the latent space? Can header and container be added (with a learnt operator, in the latent representation) to output the latent resulting page? Can algorithms for navigation in the tree structure be directly implemented in the latent space? | **Latent Navigation**: Linear interpolation between Z of samples; Clock-wise rotation (interpolation on a curved surface); Valley/ridge navigation on projected surface of latent space - valleys/ridges can be found by clustering: dense regions form valleys, while sparse regions determine ridges (topology map). |
 
+**Application to structure extraction**:
+
+- suppose we would like to reconstruct the hierarchical data model that rendered an image
+- examples range from screenshots of graphical interfaces to photo-realistic scenes
+- in graphical interfaces: decompose a web page into main web elements - header and container with a left menu and a right grid with 3 buttons
+- in photo-realistic scenes: a group of 3 people inside a car without doors on the right lane of a highway
+- can a model trained with parts and segmented sub-parts shape the latent space such that decomposition of parts into sub-parts is possible?
+- interpolation and composition as starting experiments, then structure extraction
+
 ## Tasks
 
 ### Multi-Label Figures with Shape & Color
