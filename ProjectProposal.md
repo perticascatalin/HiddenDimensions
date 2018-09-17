@@ -209,6 +209,9 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 |![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_3.png "Sample 3")| 2 large red squares, 3 triangles on top|
 |![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_4.png "Sample 4")| 2 circles, 2 squares and 5 triangles|
 
+**Primary Goal**: Test RNN for textual description of scenes.
+
+**Secondary Goal**: Use attentional RNN to visualize the parts of the image the model looks at in order to generate a certain word in the description.
 
 ### Synthetic Webpages
 
@@ -217,6 +220,8 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 | Webpage | Element masks |
 |:-------:|:-------------:|
 |![Webpage](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/image.png "Webpage")|![Element masks](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/masked_image.png "Element masks")|
+
+**Description**: This dataset was used to compare the results of models which infer html code from web page screenshots. An initial experiment compared the end-to-end network (pix2code) with a neural network for web elements segmentation and a tree decoding based on overlaps.
 
 **Extension**: Latent arithmetic with web elements
 
@@ -304,8 +309,7 @@ Models that work well for this dataset could be extended to do some sort of prog
 
 ## References
 
-[C1] [Cognitive Psychology for Deep Neural Networks:
-A Shape Bias Case Study] (https://arxiv.org/pdf/1706.08606.pdf), S. Ritter et al, 2017
+[C1] [Cognitive Psychology for Deep Neural Networks: A Shape Bias Case Study] (https://arxiv.org/pdf/1706.08606.pdf), S. Ritter et al, 2017
 
 [G1] [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), A. Santoro et al, 2017
 
