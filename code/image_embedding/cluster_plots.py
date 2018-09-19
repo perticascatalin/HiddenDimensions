@@ -9,5 +9,5 @@ SOM_hom = [0.61, 0.76, 0.78, 0.79, 0.80, 0.79, 0.79, 0.81]
 plt.xlabel('Z dim')
 plt.plot(Z, KM_sil, Z, SOM_sil, Z, KM_hom, Z, SOM_hom)
 plt.legend(['KM sil', 'SOM sil', 'KM hom', 'SOM hom'])
-#plt.show()
+plt.show()
 plt.savefig('cluster_plots.png')

@@ -1,0 +1,10 @@
+
+*.pyc
+code/image_embedding/data/
+code/image_embedding/label/
+code/image_embedding/tensorflow-generative-model-collections-master/logs
+code/image_embedding/tensorflow-generative-model-collections-master/checkpoint
+code/image_embedding/tensorflow-generative-model-collections-master/results
+code/image_embedding/tensorflow-generative-model-collections-master/data
+code/image_embedding/embedding_data/z_10/VAE_epoch031_id_tot.p
+*.p

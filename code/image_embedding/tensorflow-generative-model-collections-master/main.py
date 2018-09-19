@@ -1,20 +1,7 @@
 import os
 
-## GAN Variants
-from GAN import GAN
-from CGAN import CGAN
-from infoGAN import infoGAN
-from ACGAN import ACGAN
-from EBGAN import EBGAN
-from WGAN import WGAN
-from WGAN_GP import WGAN_GP
-from DRAGAN import DRAGAN
-from LSGAN import LSGAN
-from BEGAN import BEGAN
-
-## VAE Variants
+# VAE Variants
 from VAE import VAE
-from CVAE import CVAE
 
 from utils import show_all_variables
 from utils import check_folder
@@ -23,6 +10,8 @@ import tensorflow as tf
 import argparse
 
 """parsing and configuration"""
+
+
 def parse_args():
     desc = "Tensorflow implementation of GAN collections"
     parser = argparse.ArgumentParser(description=desc)
@@ -41,10 +30,15 @@ def parse_args():
                         help='Directory name to save the generated images')
     parser.add_argument('--log_dir', type=str, default='logs',
                         help='Directory name to save training logs')
+    parser.add_argument('--test_input_type', type=str, default='dataset',
+                        help='Generate images from the dataset or random noise')
 
     return check_args(parser.parse_args())
 
+
 """checking arguments"""
+
+
 def check_args(args):
     # --checkpoint_dir
     check_folder(args.checkpoint_dir)
@@ -66,16 +60,18 @@ def check_args(args):
 
     return args
 
+
 """main"""
+
+
 def main():
     # parse arguments
     args = parse_args()
     if args is None:
-      exit()
+        exit()
 
     # open session
-    models = [GAN, CGAN, infoGAN, ACGAN, EBGAN, WGAN, WGAN_GP, DRAGAN,
-              LSGAN, BEGAN, VAE, CVAE]
+    models = [VAE]
     with tf.Session(config=tf.ConfigProto(allow_soft_placement=True)) as sess:
         # declare instance for GAN
 
@@ -89,7 +85,8 @@ def main():
                             dataset_name=args.dataset,
                             checkpoint_dir=args.checkpoint_dir,
                             result_dir=args.result_dir,
-                            log_dir=args.log_dir)
+                            log_dir=args.log_dir,
+                            test_input_type=args.test_input_type)
         if gan is None:
             raise Exception("[!] There is no option for " + args.gan_type)
 
@@ -106,6 +103,7 @@ def main():
         # visualize learned generator
         gan.visualize_results(args.epoch-1)
         print(" [*] Testing finished!")
+
 
 if __name__ == '__main__':
     main()

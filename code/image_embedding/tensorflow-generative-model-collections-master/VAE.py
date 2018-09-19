@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from __future__ import division
 import os
 import time
@@ -12,10 +12,11 @@ from utils import *
 
 import prior_factory as prior
 
+
 class VAE(object):
     model_name = "VAE"     # name for checkpoint
 
-    def __init__(self, sess, epoch, batch_size, z_dim, dataset_name, checkpoint_dir, result_dir, log_dir):
+    def __init__(self, sess, epoch, batch_size, z_dim, dataset_name, checkpoint_dir, result_dir, log_dir, test_input_type):
         self.sess = sess
         self.dataset_name = dataset_name
         self.checkpoint_dir = checkpoint_dir
@@ -23,6 +24,7 @@ class VAE(object):
         self.log_dir = log_dir
         self.epoch = epoch
         self.batch_size = batch_size
+        self.test_input_type = test_input_type
 
         if dataset_name == 'mnist' or dataset_name == 'fashion-mnist':
             # parameters
@@ -98,7 +100,7 @@ class VAE(object):
 
         """ Loss Function """
         # encoding
-        self.mu, sigma = self.encoder(self.inputs, is_training=True, reuse=False)        
+        self.mu, sigma = self.encoder(self.inputs, is_training=True, reuse=False)
 
         # sampling by re-parameterization technique
         z = self.mu + sigma * tf.random_normal(tf.shape(self.mu), 0, 1, dtype=tf.float32)
@@ -124,7 +126,7 @@ class VAE(object):
         t_vars = tf.trainable_variables()
         with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
             self.optim = tf.train.AdamOptimizer(self.learning_rate*5, beta1=self.beta1) \
-                      .minimize(self.loss, var_list=t_vars)
+                .minimize(self.loss, var_list=t_vars)
 
         """" Testing """
         # for test
@@ -175,13 +177,14 @@ class VAE(object):
                 batch_z = prior.gaussian(self.batch_size, self.z_dim)
 
                 # update autoencoder
-                _, summary_str, loss, nll_loss, kl_loss = self.sess.run([self.optim, self.merged_summary_op, self.loss, self.neg_loglikelihood, self.KL_divergence],
-                                               feed_dict={self.inputs: batch_images, self.z: batch_z})
+                _, summary_str, loss, nll_loss, kl_loss = \
+                    self.sess.run([self.optim, self.merged_summary_op, self.loss, self.neg_loglikelihood, self.KL_divergence],
+                                  feed_dict={self.inputs: batch_images, self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # display training status
                 counter += 1
-                print("Epoch: [%2d] [%4d/%4d] time: %4.4f, loss: %.8f, nll: %.8f, kl: %.8f" \
+                print("Epoch: [%2d] [%4d/%4d] time: %4.4f, loss: %.8f, nll: %.8f, kl: %.8f"
                       % (epoch, idx, self.num_batches, time.time() - start_time, loss, nll_loss, kl_loss))
 
                 # save training results for every 300 steps
@@ -215,15 +218,17 @@ class VAE(object):
 
         """ random condition, random noise """
 
-        z_sample = prior.gaussian(self.batch_size, self.z_dim)
+        if self.test_input_type == 'dataset':
+            samples = self.sess.run(self.out, feed_dict={self.inputs: self.data_X[:tot_num_samples]})
+        elif self.test_input_type == 'noise':
+            z_sample = prior.gaussian(self.batch_size, self.z_dim)
 
-        samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample})
+            samples = self.sess.run(self.fake_images, feed_dict={self.z: z_sample})
 
         save_images(samples[:image_frame_dim * image_frame_dim, :, :, :], [image_frame_dim, image_frame_dim],
                     check_folder(
                         self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_test_all_classes.png')
 
-       
         if self.z_dim == 2:
             """ learned manifold """
             assert self.z_dim == 2
@@ -231,8 +236,8 @@ class VAE(object):
             z_tot = None
             id_tot = None
             for idx in range(0, 100):
-                #randomly sampling
-                id = np.random.randint(0,self.num_batches)
+                # randomly sampling
+                id = np.random.randint(0, self.num_batches)
                 batch_images = self.data_X[id * self.batch_size:(id + 1) * self.batch_size]
                 batch_labels = self.data_y[id * self.batch_size:(id + 1) * self.batch_size]
 
@@ -252,8 +257,8 @@ class VAE(object):
             z_tot = None
             id_tot = None
             for idx in range(0, 100):
-                #randomly sampling
-                id = np.random.randint(0,self.num_batches)
+                # randomly sampling
+                id = np.random.randint(0, self.num_batches)
                 batch_images = self.data_X[id * self.batch_size:(id + 1) * self.batch_size]
                 batch_labels = self.data_y[id * self.batch_size:(id + 1) * self.batch_size]
 
@@ -266,7 +271,7 @@ class VAE(object):
                     z_tot = np.concatenate((z_tot, z), axis=0)
                     id_tot = np.concatenate((id_tot, batch_labels), axis=0)
 
-            reduced_z = PCA(n_components = 2).fit_transform(z_tot)
+            reduced_z = PCA(n_components=2).fit_transform(z_tot)
             save_scattered_image(reduced_z, id_tot, -4, 4, name=check_folder(
                 self.result_dir + '/' + self.model_dir) + '/' + self.model_name + '_epoch%03d' % epoch + '_learned_manifold.png')
 
@@ -285,7 +290,7 @@ class VAE(object):
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
 
-        self.saver.save(self.sess,os.path.join(checkpoint_dir, self.model_name+'.model'), global_step=step)
+        self.saver.save(self.sess, os.path.join(checkpoint_dir, self.model_name+'.model'), global_step=step)
 
     def load(self, checkpoint_dir):
         import re
@@ -296,7 +301,7 @@ class VAE(object):
         if ckpt and ckpt.model_checkpoint_path:
             ckpt_name = os.path.basename(ckpt.model_checkpoint_path)
             self.saver.restore(self.sess, os.path.join(checkpoint_dir, ckpt_name))
-            counter = int(next(re.finditer("(\d+)(?!.*\d)",ckpt_name)).group(0))
+            counter = int(next(re.finditer("(\d+)(?!.*\d)", ckpt_name)).group(0))
             print(" [*] Success to read {}".format(ckpt_name))
             return True, counter
         else:

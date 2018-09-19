@@ -3,7 +3,8 @@ Most codes from https://github.com/musyoku/adversarial-autoencoder/blob/master/s
 """
 
 import numpy as np
-from math import sin,cos,sqrt
+from math import sin, cos, sqrt
+
 
 def onehot_categorical(batch_size, n_labels):
     y = np.zeros((batch_size, n_labels), dtype=np.float32)
@@ -11,6 +12,7 @@ def onehot_categorical(batch_size, n_labels):
     for b in range(batch_size):
         y[b, indices[b]] = 1
     return y
+
 
 def uniform(batch_size, n_dim, n_labels=10, minv=-1, maxv=1, label_indices=None):
     if label_indices is not None:
@@ -30,10 +32,11 @@ def uniform(batch_size, n_dim, n_labels=10, minv=-1, maxv=1, label_indices=None)
         z = np.empty((batch_size, n_dim), dtype=np.float32)
         for batch in range(batch_size):
             for zi in range((int)(n_dim/2)):
-                    z[batch, zi*2:zi*2+2] = sample(label_indices[batch], n_labels)
+                z[batch, zi*2:zi*2+2] = sample(label_indices[batch], n_labels)
     else:
         z = np.random.uniform(minv, maxv, (batch_size, n_dim)).astype(np.float32)
     return z
+
 
 def gaussian(batch_size, n_dim, mean=0, var=1, n_labels=10, use_label_info=False):
     if use_label_info:
@@ -46,8 +49,8 @@ def gaussian(batch_size, n_dim, mean=0, var=1, n_labels=10, use_label_info=False
 
             label = ((int)(n_labels*angle))//360
 
-            if label<0:
-                label+=n_labels
+            if label < 0:
+                label += n_labels
 
             return np.array([x, y]).reshape((2,)), label
 
@@ -55,13 +58,14 @@ def gaussian(batch_size, n_dim, mean=0, var=1, n_labels=10, use_label_info=False
         z_id = np.empty((batch_size, 1), dtype=np.int32)
         for batch in range(batch_size):
             for zi in range((int)(n_dim/2)):
-                    a_sample, a_label = sample(n_labels)
-                    z[batch, zi*2:zi*2+2] = a_sample
-                    z_id[batch] = a_label
+                a_sample, a_label = sample(n_labels)
+                z[batch, zi*2:zi*2+2] = a_sample
+                z_id[batch] = a_label
         return z, z_id
     else:
         z = np.random.normal(mean, var, (batch_size, n_dim)).astype(np.float32)
         return z
+
 
 def gaussian_mixture(batch_size, n_dim=2, n_labels=10, x_var=0.5, y_var=0.1, label_indices=None):
     if n_dim != 2:
@@ -87,6 +91,7 @@ def gaussian_mixture(batch_size, n_dim=2, n_labels=10, x_var=0.5, y_var=0.1, lab
                 z[batch, zi*2:zi*2+2] = sample(x[batch, zi], y[batch, zi], np.random.randint(0, n_labels), n_labels)
 
     return z
+
 
 def swiss_roll(batch_size, n_dim=2, n_labels=10, label_indices=None):
     if n_dim != 2:
