@@ -21,9 +21,9 @@
 
 **Applications linked to our past research**:
 
-- *Clustering Computer Programs based on Spatio-Temporal Features*
+- *Clustering Computer Programs based on Spatiotemporal Features*
 - *Aster Project: AST derived Code Representations for General Code Evaluation and Generation*
-- *Clustering and Visualization of Latent Representations*
+- *Clustering and Visualisation of Latent Representations*
 - *Learning Semantic Web Categories by Clustering and Embedding Web Elements*
 
 ## Representations
@@ -104,7 +104,7 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 - SOM clustering (first row) and PCA (second row) 2D projection of latent MNIST as learnt by a VAE
 - Z_dim = 2, latent representation of samples, no projection
 - latent space becomes denser as Z_dim increases (see PCA)
-- latent space can be re-modeled (density changes) through topological projection (see SOM)
+- latent space can be remodeled (density changes) through topological projection (see SOM)
 
 **Observations regarding data complexity**:
 
@@ -181,7 +181,7 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 |:------------------:|:----------------------:|
 |![Multi-Label vs. Combo](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/multi_label_vs_combo.png "Multi-Label vs. Combo")|Multi-label performs slightly better than combinations of all labels. The total number of logits add in the case of multi-label, but multiplies in the case of combinations.|
 
-### Spatial Relationes between Figures and Scene Description
+### Spatial Relations between Figures and Scene Description
 
 **Data domain**: synthetic, image and text
 
@@ -234,7 +234,7 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 
 **Data domain**: natural, image
 
-**Primary Idea**: Clutering of latent representation
+**Primary Idea**: Clustering of latent representation
 
 
 **Secondary Idea**: Latent interpolation
@@ -305,6 +305,7 @@ Models that work well for this dataset could be extended to do some sort of prog
 - What if a pattern of movements always results the same output?
 - How can such patterns be found? 
 - Can an agent model optimal behavior and generate such patterns?
+- Model three levels proposed in the ladder of causation by Pearl [P1]: Association, Intervention and Counterfactuals 
 - Does curiosity help?
 
 ## References
@@ -316,3 +317,5 @@ Models that work well for this dataset could be extended to do some sort of prog
 [M1] [A Comparison between Wasserstein Distance and a
 Distance Induced by Fisher-Rao Metric in Complex
 Shapes Clustering ](http://www.mdpi.com/2504-3900/2/4/163/pdf), A. De Sanctis and S. Gattone,  2017
+
+[P1] [The Book of Why: The New Science of Cause and Effect] Judea Pearl, 2018.
