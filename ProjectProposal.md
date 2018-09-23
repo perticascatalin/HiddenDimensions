@@ -47,13 +47,13 @@
 
 **Idea**: Model latent variable as a variable drawn from a learned probability distribution.
 
-**Result**: By comparison to the autoencoder the latent space is continuous and interpolation between samples is possible.
+**Result**: By comparison to the autoencoder the latent space is continuous and interpolation between samples is possible. See [VAE tutorial 1](https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf) for more explanations on this topic.
 
 **Key-words**: Prior, posterior, probability distribution, log-likelihood, jensen inequality, re-parametrization trick, sampling from a distribution.
 
 | Representation | Description |
 |:---:|:---:|
-| ![VAE Encoder Decoder](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/encoder_decoder.png "VAE Encoder Decoder")  from *https://jaan.io/what-is-variational-autoencoder-vae-tutorial/*| **Encoder**: q models probability of hidden variable given data, **Decoder**: p models data probability given hidden variable |
+| ![VAE Encoder Decoder](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/encoder_decoder.png "VAE Encoder Decoder")  from [VAE tutorial 2](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/)| **Encoder**: q models probability of hidden variable given data, **Decoder**: p models data probability given hidden variable |
 
 | ![VAE Derivation](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/vae_1.jpg "VAE Derivation") | ![VAE Properties](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/vae_2.jpg "VAE Properties") |
 |:---:|:---:|
@@ -198,6 +198,10 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 |![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/87_blue_circle_next_to_red_square.png "Sample 3")| blue circle next_to red square|
 |![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSC/148_green_square_next_to_blue_triangle.png "Sample 4")| green square next_to blue triangle|
 
+**Primary Goal**: Test RNN for textual description of scenes.
+
+**Secondary Goal**: Use attentional RNN to visualize the parts of the image the model looks at in order to generate a certain word in the description. See [A1, A2] for visual attention models and [A3, A4] for text attention models.
+
 **Extension**: Latent arithmetic with figures
 
 **More complex spatial relations**:
@@ -208,10 +212,6 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 |![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_2.png "Sample 2")| 3 large red squares, one square on top of the other|
 |![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_3.png "Sample 3")| 2 large red squares, 3 triangles on top|
 |![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_4.png "Sample 4")| 2 circles, 2 squares and 5 triangles|
-
-**Primary Goal**: Test RNN for textual description of scenes.
-
-**Secondary Goal**: Use attentional RNN to visualize the parts of the image the model looks at in order to generate a certain word in the description.
 
 ### Synthetic Webpages
 
@@ -309,6 +309,14 @@ Models that work well for this dataset could be extended to do some sort of prog
 - Does curiosity help?
 
 ## References
+
+[A1] [Recurrent Models of Visual Attention] (https://arxiv.org/pdf/1406.6247.pdf), V. Mnih et al, 2014
+
+[A2] [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention] (https://arxiv.org/pdf/1502.03044.pdf), K. Xu et al, 2016
+
+[A3] [Neural Machine Translation by jointly Learning to Align and Translate] (https://arxiv.org/pdf/1409.0473.pdf), D. Bahdanau et al, 2015
+
+[A4] [Effective approaches to Attention-based Neural Machine Translation] (https://arxiv.org/abs/1508.04025), M. Luong et al, 2015
 
 [C1] [Cognitive Psychology for Deep Neural Networks: A Shape Bias Case Study] (https://arxiv.org/pdf/1706.08606.pdf), S. Ritter et al, 2017
 
