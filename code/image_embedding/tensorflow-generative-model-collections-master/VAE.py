@@ -6,6 +6,7 @@ import tensorflow as tf
 import numpy as np
 import pickle
 from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
 
 from ops import *
 from utils import *
@@ -307,3 +308,46 @@ class VAE(object):
         else:
             print(" [*] Failed to find a checkpoint")
             return False, 0
+
+    def generateLandmarks(self):
+        landmarks = []
+
+        for curr_class in range(0, 10):
+            index = 0
+
+            for num_samples in range(0, 64):
+                while self.data_y[index][curr_class] == 0:
+                    index += 1
+
+                landmarks.append(self.data_X[index])
+                index += 1
+
+        landmarks = np.asarray(landmarks)
+        return landmarks
+
+    def sample_from_convex_hull(self, landmarks):
+        weights = np.zeros(shape=[64, self.z_dim+1])
+        for i in range(64):
+            weights[i] = np.random.dirichlet(np.ones(self.z_dim+1, dtype=np.float32), size=1)
+
+        input = tf.placeholder(tf.float32, [64, 28, 28, 1])
+
+        mu, sigma = self.encoder(input, is_training=False, reuse=True)
+        z = mu + sigma * tf.random_normal(tf.shape(mu), 0, 1, dtype=tf.float32)
+
+        weights_ = tf.placeholder(tf.float32, [64, self.z_dim+1])
+        point = tf.matmul(weights_, z[:11])
+
+        out = self.decoder(point, is_training=False, reuse=True)
+        self.out = tf.clip_by_value(out, 1e-8, 1 - 1e-8)
+
+        point_, out_ = self.sess.run([point, self.out], feed_dict={input: landmarks[:64], weights_: weights})
+        out_ = np.reshape(out_, [64, 28, 28])
+        print(out_.shape)
+
+        for i in range(8):
+            for j in range(8):
+                plt.subplot(8, 8, i*8 + j + 1)
+                plt.imshow(out_[i*8+j], cmap='gray')
+
+        plt.show()

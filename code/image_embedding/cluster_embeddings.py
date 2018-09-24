@@ -6,9 +6,9 @@ from som import SOM
 from sklearn.cluster import KMeans
 
 # Self-Organizing Map Parameters
-SOM_LINES = 20
-SOM_COLS = 20
-SOM_ITERATIONS = 40
+SOM_LINES = 30
+SOM_COLS = 30
+SOM_ITERATIONS = 60
 ALPHA = 0.4
 SIGMA = 16.0
 

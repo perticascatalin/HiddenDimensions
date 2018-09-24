@@ -8,7 +8,7 @@ import pprint
 import scipy.misc
 import numpy as np
 from time import gmtime, strftime
-from six.moves import xrange
+from pathlib import Path
 import matplotlib.pyplot as plt
 import os
 import gzip
@@ -18,7 +18,8 @@ import tensorflow.contrib.slim as slim
 
 
 def load_mnist(dataset_name):
-    data_dir = "C:/Users/Andrei Popovici/Documents/GitHub/HiddenDimensions/code/image_embedding/tensorflow-generative-model-collections-master/data/" + dataset_name
+    curr_dir = Path(__file__).parent
+    data_dir = curr_dir / 'data' / dataset_name
 
     def extract_data(filename, num_data, head_size, data_size):
         with gzip.open(filename) as bytestream:
@@ -27,16 +28,16 @@ def load_mnist(dataset_name):
             data = np.frombuffer(buf, dtype=np.uint8).astype(np.float)
         return data
 
-    data = extract_data(data_dir + '/train-images-idx3-ubyte.gz', 60000, 16, 28 * 28)
+    data = extract_data(Path(data_dir / 'train-images-idx3-ubyte.gz'), 60000, 16, 28 * 28)
     trX = data.reshape((60000, 28, 28, 1))
 
-    data = extract_data(data_dir + '/train-labels-idx1-ubyte.gz', 60000, 8, 1)
+    data = extract_data(Path(data_dir / 'train-labels-idx1-ubyte.gz'), 60000, 8, 1)
     trY = data.reshape((60000))
 
-    data = extract_data(data_dir + '/t10k-images-idx3-ubyte.gz', 10000, 16, 28 * 28)
+    data = extract_data(Path(data_dir / 't10k-images-idx3-ubyte.gz'), 10000, 16, 28 * 28)
     teX = data.reshape((10000, 28, 28, 1))
 
-    data = extract_data(data_dir + '/t10k-labels-idx1-ubyte.gz', 10000, 8, 1)
+    data = extract_data(Path(data_dir / 't10k-labels-idx1-ubyte.gz'), 10000, 8, 1)
     teY = data.reshape((10000))
 
     trY = np.asarray(trY)

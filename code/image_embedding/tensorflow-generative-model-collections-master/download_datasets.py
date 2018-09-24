@@ -1,7 +1,8 @@
 from tensorflow.examples.tutorials import mnist
+from pathlib import Path
 
-mnist_data = mnist.input_data.read_data_sets(
-    'C:/Users/Andrei Popovici/Documents/GitHub/HiddenDimensions/code/image_embedding/tensorflow-generative-model-collections-master/data/mnist')
+curr_dir = Path(__file__).parent
 
-data = mnist.input_data.read_data_sets('C:/Users/Andrei Popovici/Documents/GitHub/HiddenDimensions/code/image_embedding/tensorflow-generative-model-collections-master/data/fashion_mnist',
-                                       source_url='http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/')
+mnist_data = mnist.input_data.read_data_sets(str(Path(curr_dir / 'data' / 'mnist')))
+
+data = mnist.input_data.read_data_sets(str(Path(curr_dir / 'data' / 'fashion-mnist')), source_url='http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/')

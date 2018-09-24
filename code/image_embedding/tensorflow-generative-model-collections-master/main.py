@@ -104,6 +104,11 @@ def main():
         gan.visualize_results(args.epoch-1)
         print(" [*] Testing finished!")
 
+        landmarks = gan.generateLandmarks()
+        print(" [*] Generating landmarks finished!")
+
+        gan.sample_from_convex_hull(landmarks)
+
 
 if __name__ == '__main__':
     main()
