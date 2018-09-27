@@ -190,6 +190,7 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 - 56 x 56 x 3 sized images
 - 2 figures per image, obtained by concatenation of shape-color figures
 - 2 relations: *"above"* and *"next_to"*
+- for the latent arithmetic extension, also add images with only one figure
 
 | Sample | Description |
 |:------:|:-----------:|
@@ -200,9 +201,11 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 
 **Primary Goal**: Test RNN for textual description of scenes.
 
-**Secondary Goal**: Use attentional RNN to visualize the parts of the image the model looks at in order to generate a certain word in the description. See [A1, A2] for visual attention models and [A3, A4] for text attention models.
+**Secondary Goal**: Use attentional RNN to visualize the parts of the image the model looks at in order to generate a certain word in the description. 
 
-**Extension**: Latent arithmetic with figures
+**Resources**: See [A1, A2] for visual attention models and [A3, A4] for text attention models.
+
+**Extension**: Latent arithmetic with figures. What is the relation between the latent representation of an image with a circle on top of a square and the latent representation of sub-parts of the image (the image of a circle and the image of a square)?
 
 **More complex spatial relations**:
 
@@ -212,34 +215,6 @@ By exploring properties/biases of latent spaces, we can address the  **interpret
 |![Sample 2](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_2.png "Sample 2")| 3 large red squares, one square on top of the other|
 |![Sample 3](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_3.png "Sample 3")| 2 large red squares, 3 triangles on top|
 |![Sample 4](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SRSCmulti/multi_4.png "Sample 4")| 2 circles, 2 squares and 5 triangles|
-
-### Synthetic Webpages
-
-**Data domain**: synthetic, image, tree and text
-
-| Webpage | Element masks |
-|:-------:|:-------------:|
-|![Webpage](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/image.png "Webpage")|![Element masks](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/masked_image.png "Element masks")|
-
-**Description**: This dataset was used to compare the results of models which infer html code from web page screenshots. An initial experiment compared the end-to-end network (pix2code) with a neural network for web elements segmentation and a tree decoding based on overlaps.
-
-**Extension**: Latent arithmetic with web elements
-
-|Header| + | Menu| + | Grid | = | Page |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|![Header](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/header.png "Header") | + | ![Menu](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/menu.png "Menu") | + | ![Grid](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/grid.png "Grid")| = |![Page](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/page.png "Page")|
-
-
-### MNIST
-
-**Data domain**: natural, image
-
-**Primary Idea**: Clustering of latent representation
-
-
-**Secondary Idea**: Latent interpolation
-
-**Third Idea**: Few-shots learning after unsupervised training
 
 ### Sort of CLEVR
 
@@ -272,6 +247,8 @@ The dataset is a great subject for the application of **Relational Networks** [G
 
 - [Tutorial 1](https://hackernoon.com/deepmind-relational-networks-demystified-b593e408b643)
 - [Tutorial 2](https://rasmusbergpalm.github.io/recurrent-relational-networks/)
+- [GitHub Implementation 1](https://github.com/kimhc6028/relational-networks)
+- [GitHub Implementation 2](https://github.com/shamitlal/Relational_Network_Tensorflow)
 
 #### Relation to Code Generation
 
@@ -295,30 +272,55 @@ Models that work well for this dataset could be extended to do some sort of prog
 
 - Does the first object have the same color as the second one?
 - More generally, does the object on position i have the same color as the object in position i + 1
-- Where is the first object to have red color?
-- Are there any objects colored with red at all?
+- Where is the first object to have red color? Are there any objects colored with red at all?
 
 *Fourth Idea*: **Causal inference from answers to logical questions**
 
 - If object on third position is yellow and object on sixth position is blue, swapping the two will result in which color on 6th position?
 - Does the initial color on 6h position even matter?
-- What if a pattern of movements always results the same output?
-- How can such patterns be found? 
+- What if a pattern of movements always results the same output? How can such patterns be found? 
 - Can an agent model optimal behavior and generate such patterns?
 - Model three levels proposed in the ladder of causation by Pearl [P1]: Association, Intervention and Counterfactuals 
 - Does curiosity help?
 
+### Synthetic Webpages
+
+**Data domain**: synthetic, image, tree and text
+
+| Webpage | Element masks |
+|:-------:|:-------------:|
+|![Webpage](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/image.png "Webpage")|![Element masks](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/masked_image.png "Element masks")|
+
+**Description**: This dataset was used to compare the results of models which infer html code from web page screenshots. An initial experiment compared the end-to-end network (pix2code) with a neural network for web elements segmentation and a tree decoding based on overlaps.
+
+**Extension**: Latent arithmetic with web elements
+
+|Header| + | Menu| + | Grid | = | Page |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|![Header](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/header.png "Header") | + | ![Menu](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/menu.png "Menu") | + | ![Grid](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/grid.png "Grid")| = |![Page](https://raw.githubusercontent.com/perticascatalin/HiddenDimensions/master/documentation/SWP/page.png "Page")|
+
+
+### MNIST
+
+**Data domain**: natural, image
+
+**Primary Idea**: Clustering of latent representation
+
+**Secondary Idea**: Latent interpolation
+
+**Third Idea**: Few-shots learning after unsupervised training
+
 ## References
 
-[A1] [Recurrent Models of Visual Attention] (https://arxiv.org/pdf/1406.6247.pdf), V. Mnih et al, 2014
+[A1] [Recurrent Models of Visual Attention](https://arxiv.org/pdf/1406.6247.pdf), V. Mnih et al, 2014
 
-[A2] [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention] (https://arxiv.org/pdf/1502.03044.pdf), K. Xu et al, 2016
+[A2] [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/pdf/1502.03044.pdf), K. Xu et al, 2016
 
-[A3] [Neural Machine Translation by jointly Learning to Align and Translate] (https://arxiv.org/pdf/1409.0473.pdf), D. Bahdanau et al, 2015
+[A3] [Neural Machine Translation by jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf), D. Bahdanau et al, 2015
 
-[A4] [Effective approaches to Attention-based Neural Machine Translation] (https://arxiv.org/abs/1508.04025), M. Luong et al, 2015
+[A4] [Effective approaches to Attention-based Neural Machine Translation](https://arxiv.org/abs/1508.04025), M. Luong et al, 2015
 
-[C1] [Cognitive Psychology for Deep Neural Networks: A Shape Bias Case Study] (https://arxiv.org/pdf/1706.08606.pdf), S. Ritter et al, 2017
+[C1] [Cognitive Psychology for Deep Neural Networks: A Shape Bias Case Study](https://arxiv.org/pdf/1706.08606.pdf), S. Ritter et al, 2017
 
 [G1] [A simple neural network module for relational reasoning](https://arxiv.org/pdf/1706.01427.pdf), A. Santoro et al, 2017
 
