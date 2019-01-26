@@ -1,7 +1,5 @@
 # Hidden Dimensions
 
-## Intro
-
 **Goal**: Explore properties of Latent spaces to facilitate domain knowledge extraction in unsupervised/semi-supervised set-ups.
 
 **Data domains**: Text and Image. Later on Graphs.
